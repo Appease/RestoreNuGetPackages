@@ -66,7 +66,7 @@ function Compile(
     New-ModuleManifest `
         -Path "$compiledPowerShellModuleDirPath\Posh-CI-RestoreNuGetPackages.psd1" `
         -ModuleVersion $Version `
-        -Guid '90f3b2fd-318a-492c-8a47-8ef5a21253e1' `
+        -Guid 'b69ac05c-29c9-4c89-bf0b-d37ceb40783d' `
         -Author 'Chris Dostert' `
         -Description 'A Posh-CI step that restores NuGet packages' `
         -PowerShellVersion '3.0' `
