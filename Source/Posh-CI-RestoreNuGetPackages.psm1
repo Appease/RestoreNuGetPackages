@@ -12,7 +12,7 @@ function EnsureNuGetCommandLineInstalled(){
 }
 
 function Invoke-CIStep(
-[string[]][Parameter(Mandatory=$true)]$SlnAndOrConfigFilePaths){
+[string[]][Parameter(Mandatory=$true, ValueFromPipelineByPropertyName = $true)]$SlnAndOrConfigFilePaths){
 
     EnsureNuGetCommandLineInstalled
     
