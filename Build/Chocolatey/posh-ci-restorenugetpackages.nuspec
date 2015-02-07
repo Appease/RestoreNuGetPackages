@@ -15,7 +15,7 @@
 		<tags>Powershell Posh-CI Restore NuGet Packages</tags>
 		<projectUrl>https://github.com/posh-ci/posh-ci-restorenugetpackages</projectUrl>
 		<dependencies>
-			<dependency id="posh-ci" version="0.0.1" />
+			<dependency id="nuget.commandline" />
 		</dependencies>
 	</metadata>	
 	<files>
