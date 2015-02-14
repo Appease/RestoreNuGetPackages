@@ -12,10 +12,16 @@ function EnsureNuGetCommandLineInstalled(){
 }
 
 function Invoke-CIStep(
-[string[]][Parameter(Mandatory=$true, ValueFromPipelineByPropertyName = $true)]$SlnAndOrConfigFilePaths){
+[string][Parameter(Mandatory=$true,ValueFromPipelineByPropertyName=$true)]$PoshCIProjectRootDirPath,
+[string[]][Parameter(ValueFromPipelineByPropertyName = $true)]$SlnAndOrConfigFilePaths){
 
     EnsureNuGetCommandLineInstalled
     
+    # default to recursively picking up any .sln files below the project root directory path
+    if(!$SlnAndOrConfigFilePaths){
+        $SlnAndOrConfigFilePaths = Get-ChildItem -file -Recurse -Path "$PoshCIProjectRootDirPath" -Include '*.sln'
+    }
+
     foreach($slnOrConfigFilePath in $SlnAndOrConfigFilePaths)
     {        
         # invoke restore
