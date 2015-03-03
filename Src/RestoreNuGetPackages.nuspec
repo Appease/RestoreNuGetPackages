@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+	<metadata>
+		<id>RestoreNuGetPackages</id>
+		<version>$version$</version>
+		<authors>Chris Dostert</authors>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>
+			A Posh-CI step that restores NuGet packages
+		</description>
+		<tags>Powershell PoshCI NuGet PackageRestore</tags>
+		<projectUrl>https://github.com/PoshCI/RestoreNuGetPackages</projectUrl>
+	</metadata>	
+	<files>
+		<file src="**" target="tools\RestoreNuGetPackages" exclude="**\.nuspec"/>
+	</files>
+</package>

@@ -1,19 +1,31 @@
 ####What is it?
 
-A [Posh-CI](https://github.com/Posh-CI/Posh-CI) step that restores [NuGet](https://nuget.org) packages
+A [PoshCI](https://github.com/PoshCI/PoshCI) step that restores [NuGet](https://nuget.org) packages
 
 ####How do I install it?
 
 ```PowerShell
-Add-CIStep -Name "YOUR-CISTEP-NAME" -ModulePackageId "Posh-CI-RestoreNuGetPackages"
+Add-CIStep -Name "YOUR-CISTEP-NAME" -PackageId "RestoreNuGetPackages"
 ```
 
 ####What parameters are available?
 
-#####SlnAndOrConfigFilePaths
-explicit paths to .sln and/or .config files you want packages restored for; default is all .sln files within your project root dir @ any depth
+#####IncludeSlnAndOrConfigFilePath
+A String[] representing included .sln and/or .config file paths. Either literal or wildcard paths are allowed; Default is all .sln files within the project root dir @ any depth
 ```PowerShell
-[string[]][Parameter(ValueFromPipelineByPropertyName=$true)]$SlnAndOrConfigFilePaths
+[String[]]
+[Parameter(
+    ValueFromPipelineByPropertyName = $true)]
+$IncludeSlnAndOrConfigFilePath
+```
+
+#####Recurse
+a Switch representing whether to perform restore operations on files located in sub directories of $IncludeSlnAndOrConfigFilePath (at any depth)
+```PowerShell
+[Switch]
+[Parameter(
+    ValueFromPipelineByPropertyName=$true)]
+$Recurse
 ```
 
 ####What's the build status?
