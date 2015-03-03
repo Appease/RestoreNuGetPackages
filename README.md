@@ -20,7 +20,7 @@ $IncludeSlnAndOrConfigFilePath
 ```
 
 #####Recurse
-a Switch representing whether to perform restore operations on files located in sub directories of $IncludeSlnAndOrConfigFilePath (at any depth)
+a Switch representing whether to include .sln and/or .config files located in sub directories of $IncludeSlnAndOrConfigFilePath (at any depth)
 ```PowerShell
 [Switch]
 [Parameter(
