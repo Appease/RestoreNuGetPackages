@@ -35,7 +35,7 @@ $Recurse){
     # default to recursively picking up any .sln files below the project root directory path
     if(!$IncludeSlnAndOrConfigFilePath){
     
-        $SlnAndOrConfigFilePath = gci -Path "$PoshCIProjectRootDirPath" -File -Recurse  -Filter '*.sln' | %{$_.FullName}
+        $SlnAndOrConfigFilePath = gci -Path $PoshCIProjectRootDirPath -File -Recurse  -Filter '*.sln' | %{$_.FullName}
     
     }
     else{
