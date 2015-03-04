@@ -1,9 +1,9 @@
 [PSCustomObject]@{
 	Steps = [Ordered]@{
-		CreateNuGetPackage = [PSCustomObject]@{
-			Name = [String]"CreateNuGetPackage"; 
-			PackageId = [String]"CreateNuGetPackage"; 
-			PackageVersion = [String]"0.0.1"
+		CreatePoshCIPackage = [PSCustomObject]@{
+			Name = [String]"CreatePoshCIPackage"; 
+			PackageId = [String]"CreatePoshCIPackage"; 
+			PackageVersion = [String]"0.0.2"
 		}; 
 		PushNupkg = [PSCustomObject]@{
 			Name = [String]"PushNupkg"; 
