@@ -35,20 +35,20 @@ $Recurse){
     # default to recursively picking up any .sln files below the project root directory path
     if(!$IncludeSlnAndOrConfigFilePath){
     
-        $SlnAndOrConfigFilePath = gci -Path $PoshCIProjectRootDirPath -File -Recurse  -Filter '*.sln' | %{$_.FullName}
+        $SlnAndOrConfigFilePaths = gci -Path $PoshCIProjectRootDirPath -File -Recurse  -Filter '*.sln' | %{$_.FullName}
     
     }
     else{
         
-        $SlnAndOrConfigFilePath = gci -File -Path $IncludeSlnAndOrConfigFilePath -Recurse:$Recurse -Filter "Packages.config" | %{$_.FullName}   
-        $SlnAndOrConfigFilePath += gci -File -Path $IncludeSlnAndOrConfigFilePath -Recurse:$Recurse -Filter "*.sln" | %{$_.FullName}
+        $SlnAndOrConfigFilePaths = gci -File -Path $IncludeSlnAndOrConfigFilePath -Recurse:$Recurse -Filter "Packages.config" | %{$_.FullName}   
+        $SlnAndOrConfigFilePaths += gci -File -Path $IncludeSlnAndOrConfigFilePath -Recurse:$Recurse -Filter "*.sln" | %{$_.FullName}
                
     }
 
 Write-Debug `
 @"
 `Located sln & or Packages.config files:
-$($SlnAndOrConfigFilePath | Out-String)
+$($SlnAndOrConfigFilePaths | Out-String)
 "@
 
     foreach($slnOrConfigFilePath in $SlnAndOrConfigFilePaths)
