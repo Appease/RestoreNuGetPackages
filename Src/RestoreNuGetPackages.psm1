@@ -11,14 +11,14 @@ function EnsureNuGetCommandLineInstalled(){
     }    
 }
 
-function Invoke-CIStep(
+function Invoke-PoshDevOpsTask(
 
 [String]
 [ValidateNotNullOrEmpty()]
 [Parameter(
     Mandatory=$true,
     ValueFromPipelineByPropertyName=$true)]
-$PoshCIProjectRootDirPath,
+$PoshDevOpsProjectRootDirPath,
 
 [String[]]
 [Parameter(
@@ -35,7 +35,7 @@ $Recurse){
     # default to recursively picking up any .sln files below the project root directory path
     if(!$IncludeSlnAndOrConfigFilePath){
     
-        $SlnAndOrConfigFilePaths = gci -Path $PoshCIProjectRootDirPath -File -Recurse  -Filter '*.sln' | %{$_.FullName}
+        $SlnAndOrConfigFilePaths = gci -Path $PoshDevOpsProjectRootDirPath -File -Recurse  -Filter '*.sln' | %{$_.FullName}
     
     }
     else{
@@ -64,4 +64,4 @@ $($SlnAndOrConfigFilePaths | Out-String)
 
 }
 
-Export-ModuleMember -Function Invoke-CIStep
+Export-ModuleMember -Function Invoke-PoshDevOpsTask

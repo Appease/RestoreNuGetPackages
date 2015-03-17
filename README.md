@@ -1,11 +1,11 @@
 ####What is it?
 
-A [PoshCI](https://github.com/PoshCI/PoshCI) step that restores [NuGet](https://nuget.org) packages
+A [PoshDevOps](https://github.com/PoshDevOps/PoshDevOps) step that restores [NuGet](https://nuget.org) packages
 
 ####How do I install it?
 
 ```PowerShell
-Add-CIStep -Name "YOUR-CISTEP-NAME" -PackageId "RestoreNuGetPackages"
+Add-PoshDevOpsTask -Name "YOUR-CISTEP-NAME" -PackageId "RestoreNuGetPackages"
 ```
 
 ####What parameters are available?
