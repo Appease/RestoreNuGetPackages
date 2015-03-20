@@ -6,7 +6,7 @@
 		<authors>Chris Dostert</authors>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>
-			A Posh-CI step that restores NuGet packages
+			A Posh-DevOps task that restores NuGet packages
 		</description>
 		<tags>Powershell PoshDevOps NuGet PackageRestore</tags>
 		<projectUrl>https://github.com/PoshDevOps/RestoreNuGetPackages</projectUrl>

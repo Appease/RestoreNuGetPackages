@@ -1,6 +1,6 @@
 ####What is it?
 
-A [PoshDevOps](https://github.com/PoshDevOps/PoshDevOps) step that restores [NuGet](https://nuget.org) packages
+A [PoshDevOps](https://github.com/PoshDevOps/PoshDevOps) task that restores [NuGet](https://nuget.org) packages
 
 ####How do I install it?
 
