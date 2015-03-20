@@ -5,7 +5,7 @@ A [PoshDevOps](https://github.com/PoshDevOps/PoshDevOps) task that restores [NuG
 ####How do I install it?
 
 ```PowerShell
-Add-PoshDevOpsTask -Name "YOUR-CISTEP-NAME" -PackageId "RestoreNuGetPackages"
+Add-PoshDevOpsTask -Name "YOUR-TASK-NAME" -PackageId "RestoreNuGetPackages"
 ```
 
 ####What parameters are available?
