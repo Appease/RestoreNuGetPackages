@@ -54,7 +54,7 @@ $($SlnAndOrConfigFilePaths | Out-String)
     foreach($slnOrConfigFilePath in $SlnAndOrConfigFilePaths)
     {        
         # invoke restore
-        nuget restore $slnOrConfigFilePath
+        nuget restore $slnOrConfigFilePath -NonInteractive
 
         # handle errors
         if ($LastExitCode -ne 0) {
