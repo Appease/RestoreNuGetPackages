@@ -1,24 +1,14 @@
 # halt immediately on any errors which occur in this module
 $ErrorActionPreference = "Stop"
 
-function EnsureNuGetCommandLineInstalled(){
-    # install nuget-commandline
-    try{
-        Get-Command nuget -ErrorAction Stop | Out-Null
-    }
-    catch{             
-        cinst 'nuget.commandline'
-    }    
-}
-
-function Invoke-PoshDevOpsTask(
+function Invoke(
 
 [String]
 [ValidateNotNullOrEmpty()]
 [Parameter(
     Mandatory=$true,
     ValueFromPipelineByPropertyName=$true)]
-$PoshDevOpsProjectRootDirPath,
+$AppeaseProjectRootDirPath,
 
 [String[]]
 [Parameter(
@@ -29,13 +19,11 @@ $IncludeSlnAndOrConfigFilePath,
 [Parameter(
     ValueFromPipelineByPropertyName=$true)]
 $Recurse){
-
-    EnsureNuGetCommandLineInstalled
-    
+        
     # default to recursively picking up any .sln files below the project root directory path
     if(!$IncludeSlnAndOrConfigFilePath){
     
-        $SlnAndOrConfigFilePaths = gci -Path $PoshDevOpsProjectRootDirPath -File -Recurse  -Filter '*.sln' | %{$_.FullName}
+        $SlnAndOrConfigFilePaths = gci -Path $AppeaseProjectRootDirPath -File -Recurse  -Filter '*.sln' | %{$_.FullName}
     
     }
     else{
@@ -64,4 +52,4 @@ $($SlnAndOrConfigFilePaths | Out-String)
 
 }
 
-Export-ModuleMember -Function Invoke-PoshDevOpsTask
+Export-ModuleMember -Function Invoke
